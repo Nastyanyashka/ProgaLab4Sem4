@@ -35,9 +35,9 @@
             Connect = new Button();
             Disconnect = new Button();
             transefToServerButton = new Button();
-            transferToClientButton = new Button();
             textBox2 = new TextBox();
             label3 = new Label();
+            goBack_button = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -47,6 +47,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(281, 23);
             comboBox1.TabIndex = 3;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // listBox1
             // 
@@ -56,6 +57,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(281, 319);
             listBox1.TabIndex = 4;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -102,28 +104,19 @@
             transefToServerButton.Enabled = false;
             transefToServerButton.Location = new Point(12, 434);
             transefToServerButton.Name = "transefToServerButton";
-            transefToServerButton.Size = new Size(156, 23);
+            transefToServerButton.Size = new Size(281, 23);
             transefToServerButton.TabIndex = 9;
             transefToServerButton.Text = "Передать серверу";
             transefToServerButton.UseVisualStyleBackColor = true;
             transefToServerButton.Click += transefToServerButton_Click;
-            // 
-            // transferToClientButton
-            // 
-            transferToClientButton.Enabled = false;
-            transferToClientButton.Location = new Point(174, 434);
-            transferToClientButton.Name = "transferToClientButton";
-            transferToClientButton.Size = new Size(119, 23);
-            transferToClientButton.TabIndex = 10;
-            transferToClientButton.Text = "Передать клиенту";
-            transferToClientButton.UseVisualStyleBackColor = true;
-            transferToClientButton.Click += transferToClientButton_Click;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(315, 12);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.ScrollBars = ScrollBars.Vertical;
             textBox2.Size = new Size(258, 348);
             textBox2.TabIndex = 13;
             // 
@@ -136,14 +129,24 @@
             label3.TabIndex = 15;
             label3.Text = "Нет подключения к серверу";
             // 
+            // goBack_button
+            // 
+            goBack_button.Location = new Point(196, 405);
+            goBack_button.Name = "goBack_button";
+            goBack_button.Size = new Size(97, 23);
+            goBack_button.TabIndex = 16;
+            goBack_button.Text = "Назад";
+            goBack_button.UseVisualStyleBackColor = true;
+            goBack_button.Click += goBack_button_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(585, 474);
+            Controls.Add(goBack_button);
             Controls.Add(label3);
             Controls.Add(textBox2);
-            Controls.Add(transferToClientButton);
             Controls.Add(transefToServerButton);
             Controls.Add(Disconnect);
             Controls.Add(Connect);
@@ -166,8 +169,8 @@
         private Button Connect;
         private Button Disconnect;
         private Button transefToServerButton;
-        private Button transferToClientButton;
         private TextBox textBox2;
         private Label label3;
+        private Button goBack_button;
     }
 }
